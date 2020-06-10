@@ -6,6 +6,26 @@ Amazon CloudWatch is a monitoring service for AWS cloud resources and the applic
 * CreateLogGroup
 * PutLogEvents
 
+copy and paste below scripe to create new policy, and name it as a (aws-log-aget-policy),
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1591785228926",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:DescribeLogStreams",
+        "logs:PutLogEvents"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:logs:*:*:*"
+    }
+  ]
+}
+
+```
 ### 2.Create AWS Role of type EC2 and name the role Eg, CWRole-LinuxLog
 ### 3.Add the above policy CWPol-LinuxLog to Role CWRole-LinuxLog. 
 Note: Creating the AWS Role is a one time process and this can be attached to any Linux instance you want to send the logs to CloudWatch. And we are doing it for all of the instances we discuss here. Linux flavor looks similar. But there are some differences the way they manage packages and applications. We see how the logs can be sent to CloudWatch from the following variants.
