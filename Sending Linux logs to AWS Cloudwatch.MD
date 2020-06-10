@@ -36,7 +36,15 @@ $ sudo yum install awslogs
 
 ```
 3. Edit file /etc/awslogs/awscli.conf and change your AWS Region.
-4. Edit file /etc/awslogs/awslogs.conf and verify following lines [/var/log/messages] datetime_format = %b %d %H:%M:%S file = /var/log/messages buffer_duration = 5000 log_stream_name = {instance_id} initial_position = start_of_file log_group_name = AMZ-2
+4. Edit file /etc/awslogs/awslogs.conf and verify following lines 
+```
+[/var/log/messages] datetime_format = %b %d %H:%M:%S 
+file = /var/log/messages 
+buffer_duration = 5000 log_stream_name = {instance_id} 
+initial_position = start_of_file 
+log_group_name = <custom-name> # enter any name what you want 
+
+```
 5. The above configuration will create a hierarchical structure in the CloudWatch interface with log_group_name AMZ-2 ( an arbitrary name) as a container and respective instance id as the object where contents of “/var/log/messages” file is redirected. buffer_duration specifies the time duration for the batching of log events. The minimum value is 5000ms and the default value is 5000ms.
 6. Start and enable awslogsd service by typing the command:
 
