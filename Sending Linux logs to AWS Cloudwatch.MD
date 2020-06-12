@@ -58,7 +58,8 @@ $ sudo yum install awslogs
 3. Edit file /etc/awslogs/awscli.conf and change your AWS Region.
 4. Edit file /etc/awslogs/awslogs.conf and verify following lines 
 ```
-[/var/log/messages] datetime_format = %b %d %H:%M:%S 
+[/var/log/messages] 
+datetime_format = %b %d %H:%M:%S 
 file = /var/log/messages 
 buffer_duration = 5000 log_stream_name = {instance_id} 
 initial_position = start_of_file 
