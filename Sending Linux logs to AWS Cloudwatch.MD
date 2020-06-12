@@ -27,7 +27,7 @@ copy and paste below scripe to create new policy, and name it as a (aws-log-aget
 
 ```
 ### 2.Create AWS Role of type EC2 and name the role Eg, CWRole-LinuxLog
-### 3.Add the above policy CWPol-LinuxLog to Role CWRole-LinuxLog. 
+### 3.Add the above policy aws-log-aget-policy to Role CWRole-LinuxLog. 
 Note: Creating the AWS Role is a one time process and this can be attached to any Linux instance you want to send the logs to CloudWatch. And we are doing it for all of the instances we discuss here. Linux flavor looks similar. But there are some differences the way they manage packages and applications. We see how the logs can be sent to CloudWatch from the following variants.
 
 * Amazon Linux 2
